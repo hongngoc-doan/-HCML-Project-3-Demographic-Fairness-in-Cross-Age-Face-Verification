@@ -1,0 +1,24 @@
+# Installation pip install -r requirements.txt
+
+# ---- Core numerical / dataframe stack ----
+numpy<2
+pandas
+scipy                # not imported directly -- hard dependency of statsmodels
+
+# ---- Deep learning: IResNet-34 backbone, CR-FIQA(S/L), FairFace demographic model ----
+torch
+torchvision
+Pillow              # PIL.Image -- all face-image loading
+
+# ---- Statistics: Phase 5 three-way logistic regression + bootstrap CIs (analyze.py) ----
+statsmodels
+
+# ---- Parquet engine for generate_embeddings.py / extract_features.py ----
+# Never imported by name in the code, but pandas.to_parquet()/read_parquet()
+# raise ImportError at runtime without an engine installed.
+pyarrow
+
+# ----- Visualization
+matplotlib
+seaborn
+scikit-learn
